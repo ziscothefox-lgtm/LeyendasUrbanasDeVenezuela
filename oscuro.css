@@ -1,0 +1,169 @@
+/* oscuro.css - Estilos Globales para Ecos del Abismo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0a0c;
+    /* Efecto de degradado radial sutil */
+    background-image: radial-gradient(circle at 15% 30%, #1e1a1f 0%, #030103 95%);
+    color: #ddd8cf;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    padding: 20px;
+    position: relative;
+}
+
+/* Efecto de textura vieja y líneas sutiles (scanlines) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    z-index: 999;
+}
+
+/* Estilos para Enlaces (usados en el Menú) */
+a {
+    color: #aa8e6c;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: block;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+a:hover {
+    color: #f0cf9c;
+    padding-left: 10px; /* Efecto de desplazamiento al pasar el mouse */
+}
+
+/* Indicador visual en el enlace activo */
+a:hover::before {
+    content: "➢";
+    position: absolute;
+    left: -15px;
+    color: #cc8b5c;
+}
+
+/* Tarjeta de Leyenda (Diseño Papiro Oscuro) */
+.legend-card {
+    background: rgba(10, 7, 12, 0.6);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    border: 1px solid rgba(100, 60, 45, 0.5);
+    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.8), inset 0 0 15px rgba(90, 40, 20, 0.05);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Cabecera de la Leyenda dentro de la tarjeta */
+.legend-header {
+    padding: 1.5rem;
+    background: linear-gradient(95deg, #0e090f 0%, #1c131b 100%);
+    border-bottom: 1px dashed #5c3e2e;
+}
+
+.legend-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f0cf9c;
+    text-shadow: 0 2px 3px black;
+}
+
+.legend-title span {
+    background: #2c1a1a;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    padding: 0.2rem 0.7rem;
+    border-radius: 40px;
+    border: 1px solid #ac6e48;
+    color: #e2bc8c;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Cuerpo de la Leyenda */
+.legend-body {
+    padding: 1.5rem;
+}
+
+/* --- ESTILO DE IMAGEN CENTRADA --- */
+.legend-img {
+    display: block;            /* Permite centrado con margin auto */
+    margin: 0 auto 1.5rem auto; /* Centra y da espacio abajo */
+    max-width: 85%;            /* No ocupa todo el ancho para que se note el centrado */
+    height: auto;
+    max-height: 400px;         /* Evita que la imagen sea demasiado alta */
+    object-fit: contain;       /* Asegura que la imagen no se corte */
+    border-radius: 12px;
+    border: 1px solid #ac6e48; /* Borde bronce acorde al diseño */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+.legend-story {
+    font-size: 1rem;
+    color: #e0d3c4;
+    text-align: justify;
+    font-weight: 300;
+}
+
+/* Cita Tenebrosa */
+.quote-myth {
+    margin: 1.2rem 0 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid #b3522a;
+    font-style: italic;
+    color: #cbb88b;
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 10px 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Títulos de sección (usados en Menú y Créditos) */
+h2, h3 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    color: #d9b48b;
+    margin-bottom: 1rem;
+}
+
+h3 { font-size: 1.3rem; }
+
+/* Sección de Créditos (Estilo Papiro Separado) */
+.citation-section {
+    background: rgba(10, 7, 12, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #51342b;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.citation-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #cbb88b;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.autores {
+    font-weight: bold;
+    color: #e0bc8c;
+    letter-spacing: 1px;
+}
+
+.fecha {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #8b765e;
+    font-family: monospace;
+}
